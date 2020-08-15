@@ -25,8 +25,8 @@ SECRET_KEY = 'jkzz5h459!6&1o&ql8@jje0u#ye9gqa*73of2hia5m*r==0@zr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pampaninitech.pythonanywhere.com']
-
+# ALLOWED_HOSTS = ['pampaninitech.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #APPs locais 
+    'blog',
+    'pages',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +59,7 @@ ROOT_URLCONF = 'clienteenergiasolar.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,7 +126,16 @@ STATIC_URL = '/static/'
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-MEDIA_ROOT = '/home/pampaninitech/clienteenergiasolar/media'
+#MEDIA_ROOT = '/home/pampaninitech/clienteenergiasolar/media'
+MEDIA_ROOT = '/home/pampanini/clienteenergiasolar/clienteenergiasolar/media'
 MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/pampaninitech/clienteenergiasolar/static'
-STATIC_URL = '/static/'
+# #STATIC_ROOT = '/home/pampaninitech/clienteenergiasolar/static'
+# STATIC_ROOT = '/home/pampanini/clienteenergiasolar/clienteenergiasolar/static'
+# STATIC_URL = '/static/'
+
+# STATIC_ROOT = os.path.join(BASE_DIR,"deploy_to_server")
+STATIC_URL = "/static/"
+
+STATICFILES_DIRS = (
+os.path.join(BASE_DIR, "static"),
+)

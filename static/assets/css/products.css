@@ -1,0 +1,60 @@
+/*--------------------------------------------------------------
+# Produtos
+--------------------------------------------------------------*/
+.produtos .icon-box {
+    transition: all ease-in-out 0.3s;
+    background: #fefefe;
+    box-shadow: 0px 5px 90px 0px rgba(82, 86, 88, 0.150);
+    border-radius: 18px;
+    border-bottom: 5px solid #fff;
+  }
+  
+  .produtos .img-box-teste {
+    width: 100%;
+    border-radius: 18px;
+    opacity: 100%;
+  }
+  
+  .produtos .icon-box .icon {
+    width: 64px;
+    height: 64px;
+    background: #eb8b31;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: ease-in-out 0.3s;
+    color: #fff;
+  }
+  
+  .produtos .icon-box .icon i {
+    font-size: 28px;
+  }
+  
+  .produtos .icon-box h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  
+  .produtos .icon-box h4 a {
+    color: #282828;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .produtos .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+  .produtos .icon-box:hover {
+    transform: translateY(-10px);
+    border-color: #f07b0d;
+  }
+  
+  .produtos .icon-box:hover h4 a {
+    color: #f07b0d;
+  }
+  
