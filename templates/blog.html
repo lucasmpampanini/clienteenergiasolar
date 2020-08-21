@@ -1,116 +1,121 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
+{% block title %} EnergiaSolar - Blog {% endblock %}
+{% block content %}
+  {% load static %}
 
-    <head>
-        <title>Django Central</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-        <meta name="google" content="notranslate" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous" />
-    </head>
+<!-- Style CSS for page -->
+<style>
+  /*--------------------------------------------------------------
+# Blog
+--------------------------------------------------------------*/
+.blog .icon-box {
+  transition: all ease-in-out 0.3s;
+  background: #fefefe;
+  box-shadow: 0px 5px 90px 0px rgba(82, 86, 88, 0.150);
+  border-radius: 18px;
+  border-bottom: 5px solid #fff;
+  margin-bottom: 20px;
+}
 
-    <body>
-        <style>
-            body {
-            font-family: "Roboto", sans-serif;
-            font-size: 17px;
-            background-color: #fdfdfd;
-        }
-        .shadow {
-            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
-        }
-        .btn-danger {
-            color: #fff;
-            background-color: #f00000;
-            border-color: #dc281e;
-        }
-        .masthead {
-            background: #3398E1;
-            height: auto;
-            padding-bottom: 15px;
-            box-shadow: 0 16px 48px #E3E7EB;
-            padding-top: 10px;
-        }
-    </style>
+.blog .img-box-teste {
+  width: 100%;
+  border-radius: 18px;
+  opacity: 100%;
+}
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'blog' %}">Django central</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">About</a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">Policy</a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        {% block content %}
-        
-        <style>
-            body {
-                font-family: "Roboto", sans-serif;
-                font-size: 18px;
-                background-color: #fdfdfd;
-            }
-            
-            .head_text {
-                color: white;
-            }
-            
-            .card {
-                box-shadow: 0 16px 48px #E3E7EB;
-            }
-        </style>
-        
-        <header class="masthead">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class=" col-md-8 col-md-10 mx-auto">
-                        <div class="site-heading">
-                            <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to my awesome Blog </h3>
-                            <p class="text-light">We Love Django As much as you do..! &nbsp
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <div class="container">
-            <div class="row">
-                <!-- Blog Entries Column -->
-                <div class="col-md-8 mt-3 left">
-                    {% for post in post_list %}
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h2 class="card-title">{{ post.title }}</h2>
-                            <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                            <p class="card-text">{{post.content|slice:":200" }}</p>
-                            <a href="{% url 'post_details' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
+.blog .icon-box h3 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.blog .icon-box h3 a {
+  color: #282828;
+  transition: ease-in-out 0.3s;
+}
+
+.blog .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.blog .icon-box:hover {
+  transform: translateY(-10px);
+}
+
+.blog .icon-box h3 a:hover {
+color: #f07b0d;
+transition: ease-in-out 0.3s;
+}
+</style>
+
+<!-- End Style -->
+
+<!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+    {% include "navbar.html" %}
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li>Blog</li>
+        </ol>
+        <div class="section-title">
+          <h2>Blog</h2>
         </div>
         
-        {% endblock content %}
-        <!-- Footer -->
-        <footer class="py-3 bg-grey">
-            <p class="m-0 text-dark text-center ">Copyright &copy; Django Central</p>
-        </footer>
-    </body>
-</html>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section id="blog" class="blog">
+      <div class="container">
+        <div class="row">
+          {% for post in post_list %}
+            <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+              <div class="icon-box">
+                <img src="{{ post.image.url }}" class="img-box-teste">
+                <div style="  padding: 30px; ">
+                  <h3><a href="{% url 'post_detail' post.slug  %}">{{ post.title|title }}</a></h3>
+                  <p class="card-text text-muted h6"> <strong>{{ post.author|capfirst }}</strong> | {{ post.created_on|date:'d/m/Y'}} </p>
+                  <p>{{post.content|slice:":200" }}</p>
+                  <a href="{% url 'post_detail' post.slug  %}" class="get-started-btn" style="margin-left: 0px; margin-top: 25px;">Ler mais &rarr;</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>    
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  {% include "footer.html" %}
+  <!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha512-kBFfSXuTKZcABVouRYGnUo35KKa1FBrYgwG4PAx7Z2Heroknm0ca2Fm2TosdrrI356EDHMW383S3ISrwKcVPUw==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.0/venobox.min.js" integrity="sha512-hr9TR9RqJLzyYAkyJH6C9Nalz5kVDzXiNt14tANyuLuSC+7wyxEK94EfqWPBrY7eAlNEkTBowANuFQwKVjTEEw==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+{% endblock %}

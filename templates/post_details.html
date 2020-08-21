@@ -1,16 +1,26 @@
+{% extends "base.html" %}
+{% block title %} EnergiaSolar - Detalhes Post {% endblock %}
 {% block content %}
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 card mb-4  mt-3 left  top">
-      <div class="card-body">
-        <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
-        <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
-        <p class="card-text ">{{ object.content | safe }}</p>
+  {% load static %}
+  
+  <header id="header" class="fixed-top header-inner-pages">
+    {% include "navbar.html" %}
+  </header><!-- End Header -->
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 card mb-4 mt-3 top">
+        <img src="{{ post.image.url }}" style="width: 100%;">
+        <div class="card-body">
+          <h1>{% block titleBlog %} {{ object.title|title }} {% endblock titleBlog %}</h1>
+          <p class=" text-muted">{{ post.author|capfirst }} | {{ post.created_on|date:'d/m/Y' }}</p>
+          <p class="card-text ">{{ object.content | linebreaks }}</p>
+        </div>
       </div>
     </div>
-    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
   </div>
-</div>
+</section>
 
-{% endblock content %}
+{% include "footer.html" %}
+
+{% endblock %}

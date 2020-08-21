@@ -6,5 +6,5 @@ class PostList(ListView):
     template_name = 'blog.html'
 
 class PostDetail(DetailView):
-    queryset = Post
+    queryset = Post.objects.all()
     template_name = 'post_details.html'
