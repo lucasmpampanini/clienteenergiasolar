@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %} RNS Solar - Detalhes Produtos {% endblock %}
+{% block title %} EnergiaSolar - Detalhes Post {% endblock %}
 {% block content %}
   {% load static %}
   
@@ -15,11 +15,11 @@
 
         <ol>
           <li><a href="/">Home</a></li>
-          <li>Produtos</li>
-          <li>{{ product.title|title }}</li>
+          <li><a href="/#services">Serviços</a></li>
+          <li>{{ service.title|title }}</li>
         </ol>
         <div class="section-title">
-          <!-- <h2>{{ product.slug }}</h2> -->
+          <h2>Serviços</h2>
         </div>
         
 
@@ -30,11 +30,10 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-md-4 card mb-4 mt-3 top">
-        <img src="{{ product.image.url }}" style="width: 100%;">
+      <div class="col-md-10 card mb-4 mt-3 top">
         <div class="card-body">
-          <h1>{% block titleBlog %} {{ product.title|title }} {% endblock titleBlog %}</h1>
-          <p class="card-text ">{{ product.discripition | linebreaks }}</p>
+          <h1>{% block titleBlog %} {{ service.title|title }} {% endblock titleBlog %}</h1>
+          <p class="card-text "><img src="{{ service.image.url }}" style="width: 50%;">{{ service.discripition | linebreaks }}</p>
         </div>
       </div>
     </div>

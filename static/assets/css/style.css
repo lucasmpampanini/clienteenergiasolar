@@ -14,11 +14,11 @@ body {
 }
 
 a {
-  color: #eb8b31;
+  color: #26a62a;
 }
 
 a:hover {
-  color: #f07b0d;
+  color: #fec200;
   text-decoration: none;
 }
 
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #eb8b31;
+  border: 6px solid #26a62a;
   border-top-color: #fff;
   border-bottom-color: #fff;
   border-radius: 50%;
@@ -92,13 +92,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   height: 40px;
   border-radius: 50px;
-  background: #eb8b31;
+  background: #26a62a;
   color: #fff;
   transition: all 0.4s;
 }
 
 .back-to-top i:hover {
-  background: #f07b0d;
+  background: #fec200;
   color: #fff;
 }
 
@@ -177,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: #eb8b31;
+  background-color: #26a62a;
   visibility: hidden;
   width: 0px;
   transition: all 0.3s ease-in-out 0s;
@@ -204,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
-  border-top: 2px solid #eb8b31;
+  border-top: 2px solid #26a62a;
 }
 
 .nav-menu .drop-down:hover > ul {
@@ -227,7 +227,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
-  color: #f07b0d;
+  color: #fec200;
 }
 
 .nav-menu .drop-down > a:after {
@@ -273,7 +273,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Get Startet Button */
 .get-started-btn {
   margin-left: 25px;
-  background: #eb8b31;
+  background: #26a62a;
   color: #fff;
   border-radius: 50px;
   padding: 8px 25px 9px 25px;
@@ -284,7 +284,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .get-started-btn:hover {
-  background: #f07b0d;
+  background: #fec200;
   color: #fff;
 }
 
@@ -347,7 +347,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
-  color: #f07b0d;
+  color: #fec200;
   text-decoration: none;
 }
 
@@ -447,7 +447,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 94px;
   height: 94px;
   margin: 0 auto;
-  background: radial-gradient(#eb8b31 50%, rgba(173, 133, 73, 0.4) 52%);
+  background: radial-gradient(#26a62a 50%, rgba(173, 133, 73, 0.4) 52%);
   border-radius: 50%;
   display: block;
   overflow: hidden;
@@ -493,7 +493,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .play-btn:hover::after {
-  border-left: 15px solid #f07b0d;
+  border-left: 15px solid #fec200;
   transform: scale(20);
 }
 
@@ -585,7 +585,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #eb8b31;
+  background: #26a62a;
   bottom: 0;
   left: 0;
 }
@@ -623,7 +623,7 @@ section {
   left: 0;
   top: 2px;
   font-size: 20px;
-  color: #eb8b31;
+  color: #26a62a;
   line-height: 1;
 }
 
@@ -641,15 +641,15 @@ section {
   border-radius: 50px;
   transition: 0.3s;
   line-height: 1;
-  color: #eb8b31;
+  color: #26a62a;
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
   margin-top: 6px;
-  border: 2px solid #eb8b31;
+  border: 2px solid #26a62a;
 }
 
 .about .content .btn-learn-more:hover {
-  background: #f07b0d;
+  background: #fec200;
   color: #fff;
   text-decoration: none;
 }
@@ -679,7 +679,7 @@ section {
 .services .icon-box .icon {
   width: 64px;
   height: 64px;
-  background: #eb8b31;
+  background: #26a62a;
   border-radius: 50px;
   display: flex;
   align-items: center;
@@ -712,11 +712,11 @@ section {
 
 .services .icon-box:hover {
   transform: translateY(-10px);
-  border-color: #f07b0d;
+  border-color: #fec200;
 }
 
 .services .icon-box:hover h4 a {
-  color: #f07b0d;
+  color: #fec200;
 }
 
 
@@ -751,13 +751,13 @@ section {
   border-radius: 2px;
   transition: 0.5s;
   margin: 10px;
-  background: #eb8b31;
+  background: #26a62a;
   color: #fff;
   border-radius: 50px;
 }
 
 .cta .cta-btn:hover {
-  background: #f07b0d;
+  background: #fec200;
 }
 
 .cta  .email {
@@ -792,7 +792,7 @@ section {
 .cta .orc-form .sent-message {
   display: none;
   color: #fff;
-  background: #eb8b31;
+  background: #26a62a;
   text-align: left;
   padding: 15px;
   font-weight: 600;
@@ -816,7 +816,7 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #eb8b31;
+  border: 3px solid #26a62a;
   border-top-color: #eee;
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
@@ -830,7 +830,7 @@ section {
 }
 
 .cta .orc-form input:focus, .cta .orc-form select:focus,.cta .orc-form textarea:focus {
-  border-color: #eb8b31;
+  border-color: #26a62a;
 }
 
 .cta .orc-form input, .cta .orc-form select {
@@ -842,7 +842,7 @@ section {
 }
 
 .cta .orc-form button[type="submit"] {
-  background: #eb8b31;
+  background: #26a62a;
   border: 0;
   margin-top: 10px;
   padding: 8px 25px 9px 25px;
@@ -855,7 +855,7 @@ section {
 
 
 .cta .orc-form button[type="submit"]:hover {
-  background: #f07b0d;
+  background: #fec200;
 }
 
 @-webkit-keyframes animate-loading {
@@ -902,7 +902,7 @@ section {
 .features .icon-box i {
   font-size: 48px;
   float: left;
-  color: #eb8b31;
+  color: #26a62a;
 }
 
 .features .icon-box p {
@@ -985,7 +985,7 @@ section {
   font-size: 48px;
   display: block;
   font-weight: 700;
-  color: #eb8b31;
+  color: #26a62a;
 }
 
 .counts .counters p {
@@ -1029,7 +1029,7 @@ section {
 
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
   color: #fff;
-  background: #f07b0d;
+  background: #fec200;
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -1055,7 +1055,7 @@ section {
   bottom: -50px;
   z-index: 3;
   transition: all ease-in-out 0.3s;
-  background: #eb8b31;
+  background: #26a62a;
   padding: 15px 20px;
 }
 
@@ -1081,7 +1081,7 @@ section {
 }
 
 .portfolio .portfolio-item .portfolio-info .preview-link:hover, .portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: #f07b0d;
+  color: #fec200;
 }
 
 .portfolio .portfolio-item .portfolio-info .details-link {
@@ -1125,7 +1125,7 @@ section {
 
 .pricing .box h4 {
   font-size: 42px;
-  color: #eb8b31;
+  color: #26a62a;
   font-weight: 500;
   font-family: "Open Sans", sans-serif;
   margin-bottom: 20px;
@@ -1157,7 +1157,7 @@ section {
 }
 
 .pricing .box ul i {
-  color: #eb8b31;
+  color: #26a62a;
   font-size: 18px;
   padding-right: 4px;
 }
@@ -1176,8 +1176,8 @@ section {
   display: inline-block;
   padding: 10px 40px 12px 40px;
   border-radius: 50px;
-  border: 2px solid #eb8b31;
-  color: #eb8b31;
+  border: 2px solid #26a62a;
+  color: #26a62a;
   font-size: 14px;
   font-weight: 400;
   font-family: "Raleway", sans-serif;
@@ -1186,22 +1186,22 @@ section {
 }
 
 .pricing .box .btn-buy:hover {
-  background: #f07b0d;
+  background: #fec200;
   color: #fff;
 }
 
 .pricing .recommended {
-  border-color: #eb8b31;
+  border-color: #26a62a;
 }
 
 .pricing .recommended .btn-buy {
-  background: #eb8b31;
+  background: #26a62a;
   color: #fff;
 }
 
 .pricing .recommended .btn-buy:hover {
-  background: #f07b0d;
-  border-color: #f07b0d;
+  background: #fec200;
+  border-color: #fec200;
 }
 
 .pricing .recommended-badge {
@@ -1303,7 +1303,7 @@ section {
 }
 
 .faq .accordion-list a.collapsed:hover {
-  color: #f07b0d;
+  color: #fec200;
 }
 
 .faq .accordion-list a.collapsed .icon-show {
@@ -1345,7 +1345,7 @@ section {
 
 .contact .info i {
   font-size: 32px;
-  color: #eb8b31;
+  color: #26a62a;
   float: left;
   line-height: 1;
 }
@@ -1398,7 +1398,7 @@ section {
 .contact .php-email-form .sent-message {
   display: none;
   color: #fff;
-  background: #eb8b31;
+  background: #26a62a;
   text-align: left;
   padding: 15px;
   font-weight: 600;
@@ -1422,7 +1422,7 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #eb8b31;
+  border: 3px solid #26a62a;
   border-top-color: #eee;
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
@@ -1436,7 +1436,7 @@ section {
 }
 
 .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
-  border-color: #eb8b31;
+  border-color: #26a62a;
 }
 
 .contact .php-email-form input {
@@ -1448,7 +1448,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #eb8b31;
+  background: #26a62a;
   border: 0;
   padding: 10px 30px;
   color: #fff;
@@ -1457,7 +1457,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #f07b0d;
+  background: #fec200;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1641,7 +1641,7 @@ section {
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #eb8b31;
+  background: #26a62a;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -1654,7 +1654,7 @@ section {
 }
 
 #footer .social-links a:hover {
-  background: #f07b0d;
+  background: #fec200;
   color: #fff;
   text-decoration: none;
 }
@@ -1668,10 +1668,10 @@ section {
 }
 
 #footer .credits a {
-  color: #eb8b31;
+  color: #26a62a;
   transition: 0.3s;
 }
 
 #footer .credits a:hover {
-  color: #f07b0d;
+  color: #fec200;
 }
