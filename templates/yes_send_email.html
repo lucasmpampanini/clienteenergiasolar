@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block refresh %}<meta http-equiv="refresh" content="5; URL=''"/>{% endblock %}
+
+{% block title %} RNS Solar {% endblock %}
+{% block content %}
+{% load static %}
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container-fluid">
+
+    <div class="row justify-content-center">
+        <div class="col-xl-9 d-flex align-items-center justify-content-between">
+        <h1 class="logo"><a href=""><img src="{% static 'assets/img/path12.png' %}" alt=""></a></h1>
+        
+
+        <nav class="nav-menu d-none d-lg-block">
+            <ul>
+            <li class="active"><a href="#hero">Home</a></li>
+            <li><a href="#about">Sobre Nós</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="produtos">Produtos</a></li>
+            <li><a href="#clients">Clientes</a></li>
+            <li><a href="#faq">Perguntas frequentes</a></li>
+            <li><a href="#contact">Contato</a></li>
+            <li><a href="blog">Blog</a></li>
+
+            </ul>
+        </nav><!-- .nav-menu -->
+
+        <a href="#cta" class="get-started-btn scrollto">Simulação</a>
+        </div>
+    </div>
+
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-xl">
+        <h5 style="color: white;"><img style="width: 25px;" src="{% static 'assets/img/yes.png' %}" alt=""> <strong>Sua mensagem foi enviada com sucesso</strong></h5>  
+        </div>
+    </div>
+    </div>
+</section><!-- End Hero -->
+
+<!-- ======= Footer ======= -->
+{% include "footer.html" %}
+<!-- End Footer -->
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha512-kBFfSXuTKZcABVouRYGnUo35KKa1FBrYgwG4PAx7Z2Heroknm0ca2Fm2TosdrrI356EDHMW383S3ISrwKcVPUw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.0/venobox.min.js" integrity="sha512-hr9TR9RqJLzyYAkyJH6C9Nalz5kVDzXiNt14tANyuLuSC+7wyxEK94EfqWPBrY7eAlNEkTBowANuFQwKVjTEEw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+{% endblock %}
+

@@ -25,8 +25,8 @@ SECRET_KEY = 'jkzz5h459!6&1o&ql8@jje0u#ye9gqa*73of2hia5m*r==0@zr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['pampaninitech.pythonanywhere.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pampaninitech.pythonanywhere.com']
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 
     #APPs locais 
     'blog',
@@ -130,7 +131,7 @@ STATIC_URL = '/static/'
 #MEDIA_ROOT = '/home/pampaninitech/clienteenergiasolar/media'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-# #STATIC_ROOT = '/home/pampaninitech/clienteenergiasolar/static'
+# STATIC_ROOT = '/home/pampaninitech/clienteenergiasolar/static'
 # STATIC_ROOT = '/home/pampanini/clienteenergiasolar/clienteenergiasolar/static'
 # STATIC_URL = '/static/'
 
@@ -140,3 +141,12 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = (
 os.path.join(BASE_DIR, "static"),
 )
+
+# configurado para conta gmail
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'email'
+EMAIL_HOST_PASSWORD = 'senha'
+EMAIL_USE_TLS = True

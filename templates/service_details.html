@@ -1,45 +1,59 @@
 {% extends "base.html" %}
 {% block title %} EnergiaSolar - Detalhes Post {% endblock %}
 {% block content %}
-  {% load static %}
+{% load static %}
   
-  <header id="header" class="fixed-top header-inner-pages">
-    {% include "navbar.html" %}
-  </header><!-- End Header -->
+<header id="header" class="fixed-top header-inner-pages">
+  {% include "navbar.html" %}
+</header><!-- End Header -->
 
-  <main id="main">
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="container" style="margin-top: 2rem;">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-
-        <ol>
-          <li><a href="/">Home</a></li>
-          <li><a href="/#services">Serviços</a></li>
-          <li>{{ service.title|title }}</li>
-        </ol>
-        <div class="section-title">
-          <h2>Serviços</h2>
-        </div>
-        
-
-      </div>
-    </section><!-- End Breadcrumbs -->
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#services">Serviços</a></li>
+      <li>{{ service.title|title }}</li>
+    </ol>
+  </div>
+</section><!-- End Breadcrumbs -->
 
 
 <section>
   <div class="container">
-    <div class="row">
-      <div class="col-md-10 card mb-4 mt-3 top">
-        <div class="card-body">
-          <h1>{% block titleBlog %} {{ service.title|title }} {% endblock titleBlog %}</h1>
-          <p class="card-text "><img src="{{ service.image.url }}" style="width: 50%;">{{ service.discripition | linebreaks }}</p>
-        </div>
+    <div class="row justify-content-center">
+      <div class="col-md" align="center">
+          <h1>{{ service.title|title }}</h1>
       </div>
-    </div>
   </div>
+  <div class="row justify-content-center">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-text"><img src="{{ service.image.url }}" class="rounded float-right" style="width: 50%; margin: 1rem;">
+              {{ service.discripition | linebreaks }}
+            </p>
+        </div>
+    </div>
 </section>
-
+<!-- ======= Footer ======= -->
 {% include "footer.html" %}
+<!-- End Footer -->
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha512-kBFfSXuTKZcABVouRYGnUo35KKa1FBrYgwG4PAx7Z2Heroknm0ca2Fm2TosdrrI356EDHMW383S3ISrwKcVPUw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.0/venobox.min.js" integrity="sha512-hr9TR9RqJLzyYAkyJH6C9Nalz5kVDzXiNt14tANyuLuSC+7wyxEK94EfqWPBrY7eAlNEkTBowANuFQwKVjTEEw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'assets/js/main.js' %}"></script>
 
 {% endblock %}

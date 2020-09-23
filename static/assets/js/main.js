@@ -142,11 +142,25 @@
     }, 1500, 'easeInOutExpo');
     return false;
   });
+  
+  // Box modal budget
+  // Get the modal
+  var modal = document.getElementById("modalForm");
 
-  // jQuery counterUp
-  $('[data-toggle="counter-up"]').counterUp({
-    delay: 10,
-    time: 1000
-  });
+  // Get the button that opens the modal
+  var btn = document.getElementById("btnBudget");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
 
 })(jQuery);
