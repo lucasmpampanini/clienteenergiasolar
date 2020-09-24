@@ -27,9 +27,10 @@
           {% for post in post_list %}
             <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
               <div class="icon-box">
+                <a href="{% url 'post_detail' post.slug  %}">
                 <img src="{{ post.image.url }}" class="img-box-teste">
                 <div style="  padding: 30px; ">
-                  <h3><a href="{% url 'post_detail' post.slug  %}">{{ post.title|title }}</a></h3>
+                  <h3><a href="{% url 'post_detail' post.slug  %}">{{ post.title|title }}</h3></a>
                   <p class="card-text text-muted h6"> <strong>{{ post.author|capfirst }}</strong> | {{ post.created_on|date:'d/m/Y'}} </p>
                   <p>{{post.content|slice:":200" }}</p>
                   <a href="{% url 'post_detail' post.slug  %}" class="get-started-btn" style="margin-left: 0px; margin-top: 25px;">Ler mais &rarr;</a>

@@ -40,9 +40,10 @@
         {% for product in products %}
           <div class="col-lg-3 col-md-4 d-flex align-items-stretch">
             <div class="icon-box">
+              <a href="{% url 'product_details' product.slug product.id  %}">
               <img src="{{ product.image.url }}" class="img-box-teste">
               <div style="  padding: 30px; ">
-                <h4><a href="{% url 'product_details' product.slug product.id  %}">{{ product.title|title }}</a></h4>
+                <h4>{{ product.title|title }}</h4></a>
                 <p>{{product.discripition|slice:":200" }}</p>
               </div>
             </div>

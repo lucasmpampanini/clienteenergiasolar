@@ -1,0 +1,6 @@
+blog/migrations/
+blog/__pycache__/
+pages/migrations/
+pages/__pycache__/
+products/migrations/
+products/__pycache__/

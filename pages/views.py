@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from services.models import Service
+from .models import Faq, HomeImg
 from django.core.mail import EmailMessage
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
@@ -7,7 +8,9 @@ import os
 
 def index_view(request):
     context = {
-        'services': Service.objects.all()
+        'services': Service.objects.all(),
+        'homeimg': HomeImg.objects.all(),
+        'faq': Faq.objects.all(),
     }
     
     if request.method == 'POST':
@@ -46,7 +49,7 @@ def index_view(request):
         from_email = request.POST.get('email')
         message = 'Você recebeu menssagem de ' + name + '\nE-mail: ' + from_email + '\nConteudo: \n' + messagefirst
         
-        email = EmailMessage(subject, message, from_email, ['lmp.pampanini@gmail.com'])
+        email = EmailMessage(subject, message, from_email, ['solarrns@gmail.com'])
 
         if request.FILES:
             uploaded_file = request.FILES['file']

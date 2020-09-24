@@ -8,7 +8,7 @@
 
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center justify-content-between">
-          <h1 class="logo"><a href=""><img src="{% static 'assets/img/logo.png' %}" alt=""></a></h1>
+          <h1 class="logo"><a href=""><img src="{% static 'assets/img/favicon.ico' %}" alt=""></a></h1>
           
 
           <nav class="nav-menu d-none d-lg-block">
@@ -39,13 +39,13 @@
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="{% static 'assets/img/carousel1.jpg' %}" class="d-block w-100" alt="...">
+                <img src="{{ homeimg.0.image.url }}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="{% static 'assets/img/carousel2.jpg' %}" class="d-block w-100" alt="...">
+                <img src="{{ homeimg.1.image.url }}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="{% static 'assets/img/carousel3.jpg' %}" class="d-block w-100" alt="...">
+                <img src="{{ homeimg.2.image.url }}" class="d-block w-100" alt="...">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -71,8 +71,8 @@
 
         <div class="section-title">
           <h2>Sobre Nós</h2>
-          <p>A RNS nasceu na cidade de brumado. Iniciamos nossas atividades no ano de 2018 com objetivo de trazer soluções em energia sustentável, 
-            tanto para o meio urbano como também no meio rural, hoje contamos com uma rede de parceiros por boa parte da bahia.</p>
+          <p>A RNS nasceu na cidade de Brumado. Iniciamos nossas atividades no ano de 2018 com objetivo de trazer soluções em energia sustentável, 
+            tanto para o meio urbano como também no meio rural, hoje contamos com uma rede de parceiros por boa parte da Bahia.</p>
         </div>
 
         <div class="row content">
@@ -89,9 +89,11 @@
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
               Contamos com seguro de risco de engenharia em todas as nossas instalações (preservando assim
-               a integridade dos nossos colaboradores como também nossos clientes) nossa empresa dá um ano de 
-               garantia em todas as instalações sendo que qualquer eventual falha na instalação é nossa 
-               responsabilidade durante esse período. Trabalhamos com equipamentos com vida útil estimada em 25 anos.
+               a integridade dos nossos colaboradores como também nossos clientes).
+              </br>
+               Nossa empresa dá um ano de garantia em todas as instalações, sendo que qualquer eventual falha
+               na instalação é nossa responsabilidade durante esse período. Trabalhamos com equipamentos de
+                vida útil estimada em 25 anos.
             </p>
           </div>
         </div>
@@ -113,9 +115,10 @@
           {% for service in services %}
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
               <div class="icon-box" style=" margin-bottom: 20px;">
+                <a href="{% url 'service_details' service.slug service.id  %}">
                 <img src="{{ service.image.url }}" class="img-box">
                 <div style="  padding: 30px; ">
-                  <h4><a href="{% url 'service_details' service.slug service.id  %}">{{ service.title|title }}</a></h4>
+                  <h4>{{ service.title|title }}</h4></a>
                   <p>{{ service.discripition|slice:":200" }}</p>
                 </div>
               </div>
@@ -140,7 +143,7 @@
             <form method="post" role="form" class="orc-form" enctype="multipart/form-data">{% csrf_token %}
               <div class="form-row">
                 <div class="col-md-4 form-group">
-                  <h5 style="color: white;">Simulaçao para o estado da Bahia</h5>
+                  <h5 style="color: white;">Simulação para o estado da Bahia</h5>
                   <input class="form-control" type="text" placeholder="Bahia" readonly>
                 </div>
                 <div class="col-md-4">
@@ -190,28 +193,28 @@
             <div class="accordion-list">
               <ul>
                 <li>
-                  <a data-toggle="collapse" class="collapse" href="#accordion-list-1">É muito caro ter um sistema de energia solar? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <a data-toggle="collapse" class="collapse" href="#accordion-list-1">{{ faq.0.pergunta }} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-1" class="collapse show" data-parent=".accordion-list">
                     <p>
-                      Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                      {{ faq.0.resposta }}
                     </p>
                   </div>
                 </li>
 
                 <li>
-                  <a data-toggle="collapse" href="#accordion-list-2" class="collapsed">Eu preciso pagar um imposto ou taxa para concessionária de energia? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <a data-toggle="collapse" href="#accordion-list-2" class="collapsed">{{ faq.1.pergunta }} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-2" class="collapse" data-parent=".accordion-list">
                     <p>
-                      Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                      {{ faq.1.resposta }}
                     </p>
                   </div>
                 </li>
 
                 <li>
-                  <a data-toggle="collapse" href="#accordion-list-3" class="collapsed">Em quanto tempo a economia paga o investimento? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <a data-toggle="collapse" href="#accordion-list-3" class="collapsed">{{ faq.2.pergunta }} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-3" class="collapse" data-parent=".accordion-list">
                     <p>
-                      Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                      {{ faq.2.resposta }}
                     </p>
                   </div>
                 </li>
@@ -221,7 +224,7 @@
 
           </div>
 
-          <img src="{% static 'assets/img/faq.jpg' %}" class="col-lg-5 align-items-stretch order-1 order-lg-2 img">
+          <img src="{% static 'assets/img/faq.jpg' %}" class="col-lg-5 align-items-stretch order-1 order-lg-2 img d-none d-xl-block">
         </div>
 
       </div>
@@ -250,13 +253,14 @@
               <div class="address">
                 <i class="ri-map-pin-line"></i>
                 <h4>Endereço:</h4>
-                <p>R. Vo Congonha, 85 - Centro, Brumado - BA</p>
+                <p><a href="https://www.google.com/maps/search/?api=1&query=-14.201521,-41.669701&zoom=12" target="_blank">
+                  R. Vo Congonha, 85 - Centro, Brumado - BA</a></p>
               </div>
 
               <div class="email">
                 <i class="ri-mail-line"></i>
                 <h4>Email:</h4>
-                <p>solarrns@gmail.com</p>
+                <p> <a href="mailto:solarrns@gmail.com"> solarrns@gmail.com</a></p>
               </div>
 
               <div class="phone">

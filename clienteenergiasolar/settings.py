@@ -25,8 +25,7 @@ SECRET_KEY = 'jkzz5h459!6&1o&ql8@jje0u#ye9gqa*73of2hia5m*r==0@zr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pampaninitech.pythonanywhere.com']
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rnssolar.com.br']
 
 # Application definition
 
@@ -128,15 +127,9 @@ STATIC_URL = '/static/'
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-#MEDIA_ROOT = '/home/pampaninitech/clienteenergiasolar/media'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-# STATIC_ROOT = '/home/pampaninitech/clienteenergiasolar/static'
-# STATIC_ROOT = '/home/pampanini/clienteenergiasolar/clienteenergiasolar/static'
-# STATIC_URL = '/static/'
-
-# STATIC_ROOT = os.path.join(BASE_DIR,"deploy_to_server")
-STATIC_URL = "/static/"
 
 STATICFILES_DIRS = (
 os.path.join(BASE_DIR, "static"),
@@ -147,6 +140,6 @@ os.path.join(BASE_DIR, "static"),
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'email'
-EMAIL_HOST_PASSWORD = 'senha'
+EMAIL_HOST_USER = 'rnssolaremail@gmail.com'
+EMAIL_HOST_PASSWORD = '1234_5678'
 EMAIL_USE_TLS = True

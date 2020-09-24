@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Faq, HomeImg
 
-# Register your models here.
+admin.site.register(HomeImg)
+admin.site.register(Faq)
